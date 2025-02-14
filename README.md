@@ -9,17 +9,20 @@
     <a>
       <img alt="Windows" src="https://img.shields.io/badge/Windows-%23.svg?style=flat-square&logo=windows&color=0078D6&logoColor=white" />
     </a>
-    <a href="https://github.com/neovim/neovim/releases/tag/stable">
-      <img src="https://img.shields.io/badge/Neovim-0.10.4-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
-    </a>
     <a href="https://github.com/jdhao/nvim-config/releases/latest">
       <img alt="Latest release" src="https://img.shields.io/github/v/release/jdhao/nvim-config" />
+    </a>
+    <a href="https://github.com/neovim/neovim/releases/tag/stable">
+      <img src="https://img.shields.io/badge/Neovim-0.10.2-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
     </a>
     <a href="https://github.com/jdhao/nvim-config/search?l=vim-script">
       <img src="https://img.shields.io/github/languages/top/jdhao/nvim-config" alt="Top languages"/>
     </a>
     <a href="https://github.com/jdhao/nvim-config/graphs/commit-activity">
       <img src="https://img.shields.io/github/commit-activity/m/jdhao/nvim-config?style=flat-square" />
+    </a>
+    <a href="https://github.com/jdhao/nvim-config/releases/tag/v0.10.1">
+      <img src="https://img.shields.io/github/commits-since/jdhao/nvim-config/v0.10.1?style=flat-square" />
     </a>
     <a href="https://github.com/jdhao/nvim-config/graphs/contributors">
       <img src="https://img.shields.io/github/contributors/jdhao/nvim-config?style=flat-square" />
@@ -188,6 +191,7 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `Alt-j`           | Normal        | Linux/macOS/Win | Move current line or selected lines down                                 |
 | `Alt-m`           | Normal        | macOS/Win       | Markdown previewing in system browser                                    |
 | `Alt-Shift-m`     | Normal        | macOS/Win       | Stopping Markdown previewing in system browser                           |
+| `ob`              | Normal/Visual | macOS/Win       | Open link under cursor or search visual selection                        |
 | `ctrl-u`          | Insert        | Linux/macOS/Win | Turn word under cursor to upper case                                     |
 | `ctrl-t`          | Insert        | Linux/macOS/Win | Turn word under cursor to title case                                     |
 | `jk`              | Insert        | Linux/macOS/Win | Return to Normal mode without lagging                                    |
@@ -202,7 +206,6 @@ In addition to commands provided by various plugins, I have also created some cu
 | `Edit`       | edit multiple files at the same time, supports globing                  | `Edit *.vim`                   |
 | `Datetime`   | print current date and time or convert Unix time stamp to date and time | `Datetime 12345` or `Datetime` |
 | `JSONFormat` | format a JSON file                                                      | `JSONFormat`                   |
-| `CopyPath`   | copy current file path to clipboard                                     | `CopyPath relative`            |
 
 # Contributing
 
