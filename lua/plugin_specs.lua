@@ -278,8 +278,14 @@ local plugin_specs = {
   -- Multiple cursor plugin like Sublime Text?
   -- 'mg979/vim-visual-multi'
 
+  -- Autosave files on certain events
+  { "907th/vim-auto-save", event = "InsertEnter" },
+
   -- Show undo history visually
   { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } },
+
+  -- better UI for some nvim actions
+  { "stevearc/dressing.nvim" },
 
   -- Manage your yank history
   {
@@ -350,6 +356,9 @@ local plugin_specs = {
       require("config.gitsigns")
     end,
   },
+
+  -- Better git commit experience
+  { "rhysd/committia.vim", lazy = true },
 
   {
     "sindrets/diffview.nvim",
@@ -507,23 +516,7 @@ local plugin_specs = {
       require("config.which-key")
     end,
   },
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    opts = {
-      -- more beautiful vim.ui.input
-      input = {
-        enabled = true,
-        win = {
-          relative = "cursor",
-          backdrop = true,
-        },
-      },
-      -- more beautiful vim.ui.select
-      picker = { enabled = true },
-    },
-  },
+
   -- show and trim trailing whitespaces
   { "jdhao/whitespace.nvim", event = "VeryLazy" },
 
@@ -552,6 +545,7 @@ local plugin_specs = {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
     dependencies = {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -579,31 +573,6 @@ local plugin_specs = {
     end,
     event = "VeryLazy",
   },
-  {
-    -- show hint for code actions, the user can also implement code actions themselves,
-    -- see discussion here: https://github.com/neovim/neovim/issues/14869
-    "kosayoda/nvim-lightbulb",
-    config = function()
-      require("nvim-lightbulb").setup { autocmd = { enabled = true } }
-    end,
-  },
-  {
-    "Bekaboo/dropbar.nvim",
-  },
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
-    opts = {
-      rocks = { "lua-toml" }, -- specifies a list of rocks to install
-      -- luarocks_build_args = { "--with-lua=/my/path" }, -- extra options to pass to luarocks's configuration script
-    },
-  },
-  {
-    "catgoose/nvim-colorizer.lua",
-    event = "BufReadPre",
-    opts = { -- set to setup table
-    },
-  },
 }
 
 require("lazy").setup {
@@ -615,6 +584,5 @@ require("lazy").setup {
   },
   rocks = {
     enabled = false,
-    hererocks = false,
   },
 }

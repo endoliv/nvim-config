@@ -140,15 +140,13 @@ require("lualine").setup {
   options = {
     icons_enabled = true,
     theme = "auto",
-    component_separators = { left = "⏐", right = "⏐" },
     section_separators = "",
+    component_separators = "",
     disabled_filetypes = {},
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {
-      "mode",
-    },
+    lualine_a = { "mode" },
     lualine_b = {
       {
         "branch",
@@ -156,7 +154,6 @@ require("lualine").setup {
           -- truncate branch name in case the name is too long
           return string.sub(name, 1, 20)
         end,
-        color = { gui = "italic,bold" },
       },
       {
         virtual_env,
@@ -175,8 +172,8 @@ require("lualine").setup {
         source = diff,
       },
       {
-        "%S",
-        color = { gui = "bold", fg = "cyan" },
+        ime_state,
+        color = { fg = "black", bg = "#f46868" },
       },
       {
         spell,
@@ -184,10 +181,6 @@ require("lualine").setup {
       },
     },
     lualine_x = {
-      {
-        ime_state,
-        color = { fg = "black", bg = "#f46868" },
-      },
       {
         get_active_lsp,
         icon = " LSP:",
@@ -199,7 +192,7 @@ require("lualine").setup {
       },
     },
     lualine_y = {
-      { "encoding", fmt = string.upper },
+      "encoding",
       {
         "fileformat",
         symbols = {
@@ -219,8 +212,7 @@ require("lualine").setup {
         mixed_indent,
         color = "WarningMsg",
       },
-      "location",
-      "progress",
+      "progress"
     },
   },
   inactive_sections = {
